@@ -7,8 +7,13 @@ $(document).ready(function () {
     $("#seach-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
-        location(searchLocation)
+        // location(searchLocation)
+        getPlace(searchLocation)
     })
+    // place for possible API call to get location coord, ID
+    function getPlace() {
+        location(place)
+    }
 
     function location(place) {
         $.ajax({
