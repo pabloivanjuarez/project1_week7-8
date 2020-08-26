@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/style/style.css">
-  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+  <!-- <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon"> -->
   <title>Modal Cards - Free Bulma template</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet'
@@ -14,8 +14,8 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <!-- Bulma Version 0.9.0-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-  <link rel="stylesheet" type="text/css" href="../css/hero.css">
   <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/style/style.css">
   <style>
     .columns:nth-child(2) {
       margin-top: -10rem;
@@ -40,7 +40,7 @@
   </section>
   <!-- Alert tag underneath header section -B -->
   <div class="box cta">
-    <input type="text" class="has-text-centered search-bar">
+    <input type="text" class="has-text-centered search-bar" id="search">
     <button class="tag is-primary" id="search-button">Go!</button>
   </div>
   <!-- This section contains the cards -B -->
@@ -49,23 +49,25 @@
     <div id="filler-cards">
 
     </div>
-    <!-- <div class="column is-4 modal-button" data-target="modal-image">
-                <div class="card is-shady">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img src="https://ultraimg.com/images/yHrYA.jpg" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="content">
-                      <h4>Click anywhere on card</h4>
-                      <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim enim. Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                      <span class="button is-link modal-button" data-target="modal-image">Image modal</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+    <div class="column is-4 modal-button" data-target="modal-image">
+      <div class="card is-shady">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="https://ultraimg.com/images/yHrYA.jpg" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h4>Click anywhere on card</h4>
+            <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim
+              enim. Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel
+              facilisis.</p>
+            <span class="button is-link modal-button" data-target="modal-image">Image modal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
     <!-- Card 2 -B -->
     <!-- <div class="column is-4 modal-button" data-target="modal-image">
       <div class="card is-shady">
@@ -102,22 +104,22 @@
   </div>
 </div>
 </div> -->
-  </section>
-  <!-- End of card section -B -->
+    <!-- </section> -->
+    <!-- End of card section -B -->
 
-  <!-- Beginning of clickable modal card content -->
-  <div id="modal-card" class="modal modal-fx-3dSlit">
-    <div class="modal-background"></div>
-    <div class="modal-content is-tiny">
-      <!-- content -->
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
+    <!-- Beginning of clickable modal card content -->
+    <!-- <div id="modal-card" class="modal modal-fx-3dSlit"> -->
+    <!-- <div class="modal-background"></div> -->
+    <!-- <div class="modal-content is-tiny"> -->
+    <!-- content -->
+    <!-- <div class="card"> -->
+    <!-- <div class="card-image"> -->
+    <!-- <figure class="image is-4by3"> -->
+    <!-- <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image"> -->
+    <!-- </figure> -->
+    <!-- </div> -->
+    <!-- <div class="card-content"> -->
+    <!-- <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
                 <img src="http://www.radfaces.com/images/avatars/linda-barret.jpg" alt="linda barret avatar">
@@ -127,8 +129,8 @@
               <p class="title is-4">Jane Doe</p>
               <p class="subtitle is-6">@jane_doe</p>
             </div>
-          </div>
-          <div class="content">
+          </div> -->
+    <!-- <div class="content">
             Laum Ipsum junkah potatoes bookin' it. Moosetown rig up I'm tellin' you way up north bookin' it can't get
             theyah from heeyah native bean suppah whawf Powrtland Museum of Aht, back woods hawsun around the pit mummah
             Yessah, mummah muckle riyht on'ta her
@@ -144,50 +146,50 @@
             <a href="#">#css</a>
             <a href="#">#responsive</a>
             <br>
-            <time datetime="2018-02-02">12:45 AM - 20 June 2018</time>
-          </div>
+            <time datetime="2018-02-02">12:45 AM - 20 June 2018</time> -->
+    <!-- </div>
         </div>
-      </div>
-      <!-- end content -->
-    </div>
+      </div> -->
+    <!-- end content -->
+    <!-- </div>
     <button class="modal-close is-large" aria-label="close"></button>
-  </div>
+  </div> -->
 
 
 
-  <!-- Image modal -->
+    <!-- Image modal
   <div id="modal-image4" class="modal modal-fx-3dSlit">
     <div class="modal-background"></div>
-    <div class="modal-content is-huge is-image">
-      <!-- content -->
-      <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly">
-      <!-- end content -->
-    </div>
+    <div class="modal-content is-huge is-image"> -->
+    <!-- content -->
+    <!-- <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly"> -->
+    <!-- end content -->
+    <!-- </div>
     <button class="modal-close is-large" aria-label="close"></button>
-  </div>
-  <!-- Image modal-->
-  <div id="modal-image" class="modal modal-fx-superScaled">
+  </div> -->
+    <!-- Image modal-->
+    <!-- <div id="modal-image" class="modal modal-fx-superScaled">
     <div class="modal-background"></div>
-    <div class="modal-content  is-image">
-      <!-- content -->
-      <img src="https://ultraimg.com/images/yHrYA.jpg" alt="Placeholder image">
-      <!--     <img src="https://source.unsplash.com/zFrUz_tNjCY" alt="placeholder">
+    <div class="modal-content  is-image"> -->
+    <!-- content -->
+    <!-- <img src="https://ultraimg.com/images/yHrYA.jpg" alt="Placeholder image"> -->
+    <!--     <img src="https://source.unsplash.com/zFrUz_tNjCY" alt="placeholder">
         -->
-      <!-- end content -->
-    </div>
-    <button class="modal-close is-large" aria-label="close"></button>
-  </div>
-  <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
-  <script src="../js/wild.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      //The first argument are the elements to which the plugin shall be initialized
-      //The second argument has to be at least a empty object or a object with your desired options
-      OverlayScrollbars(document.querySelectorAll("body"), {});
-    });
-  </script>
+    <!-- end content -->
+    <!-- </div> -->
+    <!-- <button class="modal-close is-large" aria-label="close"></button> -->
+    <!-- </div> -->
+    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+    <script src="assets/javascirpt/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        //The first argument are the elements to which the plugin shall be initialized
+        //The second argument has to be at least a empty object or a object with your desired options
+        OverlayScrollbars(document.querySelectorAll("body"), {});
+      });
+    </script>
 </body>
 
 </html>
