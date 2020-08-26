@@ -1,46 +1,8 @@
-<<<<<<< HEAD
-const express = require('express');
-const exphbs = require("express-handlebars");
-var serveStatic = require('serve-static');
-
-require('dotenv').config()
-
-const app = express();
-const host = '0.0.0.0';
-const PORT = process.env.PORT || 3000;
-
-app.set('view engine', 'handlebars');
-app.engine('handlebars', exphbs({defaultLayout: 'views/layouts/main'}));
-
-app.use(express.static('public'));
-
-const locations = require('./controllers/locations.js');
-
-app.get('/', function(req, res) {
-    res.render('home', {layout: 'main'});
-});
-
-app.get('/contact', function(req, res) {
-    res.render('contact', {layout: 'main'});
-});
-
-app.get('/about', function(req, res) {
-    res.render('about', {layout: 'main'});
-});
-
-locations(app);
-
-app.listen(PORT, host, function() {
-    console.log("Server started.....");
-});
-
-module.exports = app;
-=======
 $(document).ready(function () {
 
 
-    const travelKey = "";
-    const weatherKey = "";
+    const travelKey = "51fc0c5c2dmsh3005b8fba85fea9p120ba0jsncc52820fe5fe";
+    const weatherKey = "03b039fdd4710d931862c2a554423848";
 
     $("#seach-button").on("click", function () {
 
@@ -108,4 +70,3 @@ $(document).ready(function () {
 
 
 })
->>>>>>> 101372581bdad975ad312f5652ffbb5547c9b141
