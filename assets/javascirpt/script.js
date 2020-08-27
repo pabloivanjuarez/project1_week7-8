@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    let cardNum = 0;
 
 
     const travelKey = "51fc0c5c2dmsh3005b8fba85fea9p120ba0jsncc52820fe5fe";
@@ -7,59 +8,84 @@ $(document).ready(function () {
     $("#seach-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
-        // location(searchLocation)
-        getPlace(searchLocation)
+        tripInfo(searchLocation)
+        console.log(searchLocation);
+        var histDate = $("#search2").val().trim();
+        // tripHist(histDate, searchLocation)
+        // 
     })
-    // place for possible API call to get location coord, ID
-    function getPlace() {
-        location(place)
-    }
+    // const weatherKey = "0f1f5e76ae2c9c4e4a7e77631190f63c";
 
-    function location(place) {
-        $.ajax({
-            url: ` ${place}  ${travelKey}`,
-            success: function (data) {
-                console.log(data);
+    // function tripHist(date, location) {
+    //     $.ajax({
+    //         url: `http://api.weatherstack.com/historical?access_key=${weatherKey}&query=${location}&historical_date=2015-15-${date}`,
 
+    //         success: function (data) {
 
-                // fill the card, on the html page
-                //$("# or ." ).empty()
-                //look at bulma card and input field classes
-                // alt tags within our divs
-                var location = $("<h3>").addClass();
-                var location = $("<img>").attr();
-                var location = $("<h3>").addClass().text(`hotels:${location.place.hotels}`)
-                var locJargen = $("<p>").addClass().text(``)
-                var location = $("<h3>").addClass()
-                var cardbody = $("<h3>").addClass(cardbody)
-                var avTemp = $("<h3>")
-                // cards need to propagate from left->right/top->bottom
-                cardbody.append(card)
-                card.append(hotels, avTemp, )
+    //             console.log(data);
+    //         }
+    //     })
+
+    // }
+
+    function tripInfo(location) {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=" + location,
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+                "x-rapidapi-key": "253684ecadmsh1aac7be27e3813ep16047bjsn0c270e942641"
+            }
+        }
+
+        $.ajax(settings).done(function (data) {
+            console.log(data);
+
+            if (cardNum >= 6) {
+                // return;
+                $(".appCard").empty()
+            }
+            cardNum++
+
+            console.log(cardNum);
+            var fakeNum = Math.floor(Math.random() * 30 + 50)
+            let cardSetup = $("<div>").addClass("card is-shady");
+            let imgSetUp = $("<div>").addClass("card-image");
+            let imgSetup2 = $("<figure>").addClass("image is-4by3")
+            let img = data.data[0].result_object.photo.images.large.url;
+            let imgPlace = $("<img>").attr("src", img);
+            let card = $("<div>").addClass("card-content")
+            let cardText = $("<div>").addClass("content")
+            let title = $("<h4>").text(data.data[0].result_object.name)
+            let infotext = "";
+            let visit = "When you're here, it'll be:"
+            let weather = " " + fakeNum + "°F"
+            // get img from 
+            for (let i = 0; i < data.data.length; i++) {
+
+                if (data.data[i].result_type === "things_to_do") {
+
+                    infotext = data.data[i].review_snippet.snippet
+                    break;
+                }
 
             }
+            let info = $("<p>").text(infotext + "...")
+            console.log(infotext);
+            card.append(cardText.append(title, info, visit, weather))
 
+            // set img card
+            imgSetUp.append(imgSetup2.append(imgPlace))
+            // solo appnd card
+            cardSetup.append(imgSetUp, card)
+            $(".appCard").append(cardSetup)
+        });
 
-        })
+        // seems like position 1 in the data array is always "geo", we'll be able to pull location name and Lat & Lon info
 
-
-    }
-
-    // // second api call
-    // .ajax
-    // url: ``
-
-
-    // add for loop to set card limit, 5 cards max
-
-
-    // this is the value for the default card search
-    const porkland = "portland";
-    // this function will propagate the default card.
-    portland(porkland)
-
-    function portland() {
-
+        // for loop needed to go through array and stop at first result_type "
     }
 
 
