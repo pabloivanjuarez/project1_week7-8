@@ -4,7 +4,7 @@ $(document).ready(function () {
     const travelKey = "51fc0c5c2dmsh3005b8fba85fea9p120ba0jsncc52820fe5fe";
     // const weatherKey = "03b039fdd4710d931862c2a554423848";
     console.log("pizza");
-    $("#seach-button").on("click", function () {
+    $("#search-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
         tripInfo(searchLocation)
@@ -24,7 +24,7 @@ $(document).ready(function () {
     // Call to historical weather api
     // function tripHist(date, location) {
     //     $.ajax({
-    //         url: `http://api.weatherstack.com/historical?access_key=${weatherKey}&query=${location}&historical_date=2015-15-${date}`,
+    // url: `http://api.weatherstack.com/historical?access_key=${weatherKey}&query=${location}&historical_date=2015-15-${date}`,
 
     //         success: function (data) {
 
