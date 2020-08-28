@@ -6,15 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/style/style.css">
-  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+  <!-- If you're going to link icons, do so with URL. Or include in the asset files. A lot easier to load a URL -PJ -->
+  <!-- This href is failing to load ↓ -PJ -->
+  <!-- <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon"> -->
   <title>Modal Cards - Free Bulma template</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel='stylesheet'
-    href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <!-- Bulma Version 0.9.0-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-  <link rel="stylesheet" type="text/css" href="../css/hero.css">
+  <!-- is this where we link our custom css ↓? I changed the path. PJ  -->
+  <link rel="stylesheet" type="text/css" href="assets/style/style.css">
   <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
   <style>
     .columns:nth-child(2) {
@@ -39,16 +42,10 @@
     </div>
   </section>
   <!-- Alert tag underneath header section -B -->
+  <!-- Input field needs to be expanded, on the bottom, to 2.5em to match the Month selector. -PJ -->
   <div class="box cta">
-    <input id="city-input" type="text" class="has-text-centered search-bar" placeholder="Enter City Name">
+    <input id="search" type="text" class="has-text-centered search-bar" placeholder="Enter City Name">
     <button class="tag is-primary" id="search-button">Go!</button>
-  </div>
-  </section>
-  <!-- Alert tag underneath header section -B -->
-  <div class="box cta">
-    <input type="text" class="has-text-centered search-bar" placeholder="Adventure Awaits">
-    <button class="tag is-primary search-bar" id="search-button">Go!</button>
-    <!-- Drop down month selector -B -->
     <div class="select month-dropdown is-small">
       <select>
         <option>Select Month</option>
@@ -67,12 +64,22 @@
       </select>
     </div>
   </div>
+  </section>
+  <!-- Alert tag underneath header section -B -->
+  <!-- <div class="box cta"> -->
+  <!-- <input type="text" class="has-text-centered search-bar" placeholder="Adventure Awaits"> -->
+  <!-- <button class="tag is-primary search-bar" id="search-button">Go!</button> -->
+  <!-- Drop down month selector -B -->
+  <!-- </div> -->
+
   <!-- This section contains the cards -B -->
   <section class="container">
     <!-- Card 1 -B -->
-    <div id="filler-cards">
-
-    </div>
+    <section>
+      <div class="colum is-4 modal-button" data-target="modal-image">
+        <div id="filler-cards"></div>
+      </div>
+    </section>
     <!-- <div class="column is-4 modal-button" data-target="modal-image">
                 <div class="card is-shady">
                   <div class="card-image">
@@ -194,7 +201,8 @@
     <div class="modal-background"></div>
     <div class="modal-content  is-image">
       <!-- content -->
-      <img src="https://ultraimg.com/images/yHrYA.jpg" alt="Placeholder image">
+      <!-- Can't get this photo to load  ↓, even in the browser, causing page to break. -PJ  -->
+      <!-- <img src="https://ultraimg.com/images/yHrYA.jpg" alt="Placeholder image"> -->
       <!--     <img src="https://source.unsplash.com/zFrUz_tNjCY" alt="placeholder">
         -->
       <!-- end content -->
@@ -202,9 +210,9 @@
     <button class="modal-close is-large" aria-label="close"></button>
   </div>
   <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
-  <script src="../js/wild.js"></script>
+  <script src="assets/javascirpt/script.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       //The first argument are the elements to which the plugin shall be initialized

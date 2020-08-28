@@ -1,21 +1,27 @@
 $(document).ready(function () {
     let cardNum = 0;
-
-
+    // keys for api
     const travelKey = "51fc0c5c2dmsh3005b8fba85fea9p120ba0jsncc52820fe5fe";
-    const weatherKey = "03b039fdd4710d931862c2a554423848";
-
+    // const weatherKey = "03b039fdd4710d931862c2a554423848";
+    console.log("pizza");
     $("#seach-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
         tripInfo(searchLocation)
         console.log(searchLocation);
-        var histDate = $("#search2").val().trim();
-        // tripHist(histDate, searchLocation)
-        // 
-    })
-    // const weatherKey = "0f1f5e76ae2c9c4e4a7e77631190f63c";
 
+        // listener for history input
+        // var histDate = $("#search2").val().trim();
+        // tripHist(histDate, searchLocation) 
+    })
+
+    $("#dropdown").on("click", function () {
+        console.log("disco");
+    })
+
+    // Historical weather API key
+    // const weatherKey = "0f1f5e76ae2c9c4e4a7e77631190f63c";
+    // Call to historical weather api
     // function tripHist(date, location) {
     //     $.ajax({
     //         url: `http://api.weatherstack.com/historical?access_key=${weatherKey}&query=${location}&historical_date=2015-15-${date}`,
@@ -25,7 +31,6 @@ $(document).ready(function () {
     //             console.log(data);
     //         }
     //     })
-
     // }
 
     function tripInfo(location) {
@@ -80,19 +85,11 @@ $(document).ready(function () {
             imgSetUp.append(imgSetup2.append(imgPlace))
             // solo appnd card
             cardSetup.append(imgSetUp, card)
-            $(".appCard").append(cardSetup)
+            $("#filler-cards").prepend(cardSetup)
         });
 
         // seems like position 1 in the data array is always "geo", we'll be able to pull location name and Lat & Lon info
 
         // for loop needed to go through array and stop at first result_type "
     }
-
-
-
-
-
-
-
-
 })
