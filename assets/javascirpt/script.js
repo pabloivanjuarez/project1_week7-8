@@ -1,11 +1,11 @@
 $(document).ready(function () {
     let cardNum = 0;
-
+    console.log("pizza");
 
     const travelKey = "51fc0c5c2dmsh3005b8fba85fea9p120ba0jsncc52820fe5fe";
     const weatherKey = "03b039fdd4710d931862c2a554423848";
 
-    $("#seach-button").on("click", function () {
+    $("#search-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
         tripInfo(searchLocation)
