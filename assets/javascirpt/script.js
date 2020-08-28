@@ -5,7 +5,7 @@ $(document).ready(function () {
     const travelKey = "51fc0c5c2dmsh3005b8fba85fea9p120ba0jsncc52820fe5fe";
     const weatherKey = "03b039fdd4710d931862c2a554423848";
 
-    $("#seach-button").on("click", function () {
+    $("#search-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
         tripInfo(searchLocation)
@@ -14,11 +14,11 @@ $(document).ready(function () {
         // tripHist(histDate, searchLocation)
         // 
     })
-    // const weatherKey = "0f1f5e76ae2c9c4e4a7e77631190f63c";
+    // const weatherKey = "03b039fdd4710d931862c2a554423848";
 
     // function tripHist(date, location) {
     //     $.ajax({
-    //         url: `http://api.weatherstack.com/historical?access_key=${weatherKey}&query=${location}&historical_date=2015-15-${date}`,
+    //         url:  `https://api.openweathermap.org/data/2.5/uvi/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}&cnt=1`,
 
     //         success: function (data) {
 
@@ -45,13 +45,13 @@ $(document).ready(function () {
 
             if (cardNum >= 6) {
                 // return;
-                $(".appCard").empty()
+                $(".column is-one-quarter").empty()
             }
             cardNum++
 
             console.log(cardNum);
             var fakeNum = Math.floor(Math.random() * 30 + 50)
-            let cardSetup = $("<div>").addClass("card is-shady");
+            let cardSetup = $("<div>").addClass("column is-one-quarter");
             let imgSetUp = $("<div>").addClass("card-image");
             let imgSetup2 = $("<figure>").addClass("image is-4by3")
             let img = data.data[0].result_object.photo.images.large.url;
@@ -80,7 +80,7 @@ $(document).ready(function () {
             imgSetUp.append(imgSetup2.append(imgPlace))
             // solo appnd card
             cardSetup.append(imgSetUp, card)
-            $(".appCard").append(cardSetup)
+            $(".columns").append(cardSetup)
         });
 
         // seems like position 1 in the data array is always "geo", we'll be able to pull location name and Lat & Lon info
