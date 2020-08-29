@@ -1,19 +1,23 @@
 $(document).ready(function () {
-    let cardNum = 0;
 
-    const travelKey = "51fc0c5c2dmsh3005b8fba85fea9p120ba0jsncc52820fe5fe";
+    // empty variable, filled with card count -P
+    let cardNum = [0];
+    // API Keys
+    const travelKey = "5d98ab50fdmshadbd223510b79d8p19cf6djsn450cac0fc786";
     // const histWeatherKey = "03b039fdd4710d931862c2a554423848";
     const currentWeatherKey = "2b7e94c082981cf991432987e4fd3482";
+    // declared variable for card propagation 
     var weatherData;
-    // var wd = weatherData.toFixed();
+
+    // listener for input field -P
+
     $("#search-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
         tripInfo(searchLocation)
         currentWeather(searchLocation)
 
-        //Lines 16 through(*19) 35 are for historical weather purposes.
-
+        //Lines 22 through(*24) 40 are for historical weather purposes. This code has been left commented out until futher funding for API use -P
         // listener for history input
         // var histDate = $("#search2").val().trim();
         // tripHist(histDate, searchLocation) 
@@ -35,15 +39,13 @@ $(document).ready(function () {
     //     })
     // }
 
-    // Call to current weather api
+    // Call to current weather api -P
     function currentWeather(sL) {
         $.ajax({
             url: `https://api.openweathermap.org/data/2.5/weather?q=${sL}&units=imperial&APPID=${currentWeatherKey}`,
             success: function (data) {
-                // console.log(data);
+                // value, class, and element is given to global variable 
                 weatherData = $("<p>").addClass("content").text("Current Weather: " + (data.main.temp).toFixed() + "°F");
-                console.log(data);
-
 
             }
         })
@@ -57,20 +59,21 @@ $(document).ready(function () {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                "x-rapidapi-key": "253684ecadmsh1aac7be27e3813ep16047bjsn0c270e942641"
+                "x-rapidapi-key": `${travelKey}`
             }
         }
 
         $.ajax(settings).done(function (data) {
             console.log(data);
-
+            // removing excess cards -P
             if (cardNum >= 6) {
-                // return;
-                $(".column is-one-quarter").empty()
+                $(".columns").remove().last()
             }
             cardNum++
 
+            // number generator for "fake" tempeture -P
             var fakeNum = Math.floor(Math.random() * 30 + 50)
+            // variables filled with elements, classes, data -P
             let cardSetup = $("<div>").addClass("column is-one-quarter");
             let imgSetUp = $("<div>").addClass("card-image");
             let imgSetup2 = $("<figure>").addClass("image is-4by3")
@@ -82,7 +85,7 @@ $(document).ready(function () {
             let infotext = "";
             let visit = "When you're here, it'll be:"
             let weather = " " + fakeNum + "°F"
-            // get img from 
+            // get img from first desired result_type -P
             for (let i = 0; i < data.data.length; i++) {
 
                 if (data.data[i].result_type === "things_to_do") {
@@ -93,13 +96,15 @@ $(document).ready(function () {
 
             }
             let info = $("<p>").text(infotext + "...")
-            card.append(cardText.append(title, info, visit, weather, weatherData))
 
-            // set img card
+            //filling text section of card -P 
+            card.append(cardText.append(title, info, visit, weather, weatherData))
+            // set img card -P
             imgSetUp.append(imgSetup2.append(imgPlace))
-            // solo appnd card
+            // solo appnd card -P
             cardSetup.append(imgSetUp, card)
-            $(".columns").append(cardSetup)
+            // propagation to the screen -D 
+            $(".columns").prepend(cardSetup)
         });
 
     }
