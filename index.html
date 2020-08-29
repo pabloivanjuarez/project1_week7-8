@@ -1,65 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
-    <title>Adventure Builder</title>
-    <!--Stylesheets-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="assets\style\style.css">
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Staatliches&display=swap" rel="stylesheet">
-        
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <title>Adventure Builder</title>
+  <!--Stylesheets -B&N -->
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <!--Fonts -B&N -->
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Staatliches&display=swap" rel="stylesheet">
+
 </head>
-<!-- get title from location_string -->
+<!-- Video, used for background -P -->
+<div id="leBackground">
+  <video autoplay loop muted>
+    <source src="assets/images/In-The-Clouds.mp4" type="video/mp4">
+  </video>
+</div>
+
 <body>
-    <section class="hero is-info is-small">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <p class="title">
-                    Adventure Builder
-                </p>
-                <!-- Sub header section -B -->
-                <p class="subtitle">
-                    Plan your next adventure!
-                </p>
-            </div>
-        </div>
-    </section>
-    <!--Search bar and month drop-down-->
-    <div class="box cta">
-        <input id="search" type="text" class="has-text-centered search-bar" placeholder="Enter City Name">
-        <button class="tag is-primary" id="search-button">Go!</button>
-        <div class="select month-dropdown is-small">
-            <select>
-              <option>Select Month</option>
-              <option>January</option>
-              <option>February</option>
-              <option>March</option>
-              <option>April</option>
-              <option>May</option>
-              <option>June</option>
-              <option>July</option>
-              <option>August</option>
-              <option>September</option>
-              <option>October</option>
-              <option>November</option>
-              <option>December</option>
-            </select>
-          </div>
-        </div>
+  <!-- get title from location_string -->
+  <section class="hero is-info is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+
+        <p class="title">
+          Adventure Builder
+        </p>
+        <!-- Sub header section -B -->
+        <p class="subtitle">
+          Plan your next adventure!
+        </p>
       </div>
-      </section>
-        <section>
-          <div class="columns is-multiline" data-target="modal-image"></div>
-        </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="assets/javascirpt/script.js"></script>
+    </div>
+  </section>
+
+  <!--Search bar and month drop-down -B&N-->
+  <div class="box cta">
+    <input id="search" type="text" class="has-text-centered search-bar" placeholder="Enter City Name">
+    <button class="tag is-primary" id="search-button">Go!</button>
+    <div class="select month-dropdown is-small">
+      <select>
+        <option>Select Month</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  </section>
+  </div>
+  <!--where the script prepends new cards to the screen -D -->
+  <section>
+    <div class="columns is-multiline" data-target="modal-image"></div>
+  </section>
+  <!-- Footer info -P -->
+  <footer class="is-fixed-bottom">
+    <h1 id="one">Brought to you by these fine people</h1>
+    <h2>Bronson</h2>
+    <h2 id="two">Diane</h2>
+    <h2 id="three">Natalie</h2>
+    <h2 id="four">Pablo</h2>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="assets/javascirpt/script.js"></script>
 </body>
+
 </html>
