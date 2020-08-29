@@ -1,32 +1,32 @@
 $(document).ready(function () {
     let cardNum = 0;
-    console.log("pizza");
 
     const travelKey = "51fc0c5c2dmsh3005b8fba85fea9p120ba0jsncc52820fe5fe";
-    const weatherKey = "03b039fdd4710d931862c2a554423848";
-
+    // const histWeatherKey = "03b039fdd4710d931862c2a554423848";
+    const currentWeatherKey = "2b7e94c082981cf991432987e4fd3482";
+    var weatherData;
+    // var wd = weatherData.toFixed();
     $("#search-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
         tripInfo(searchLocation)
-        console.log(searchLocation);
+        currentWeather(searchLocation)
+
+        //Lines 16 through(*19) 35 are for historical weather purposes.
 
         // listener for history input
         // var histDate = $("#search2").val().trim();
         // tripHist(histDate, searchLocation) 
     })
-    // const weatherKey = "03b039fdd4710d931862c2a554423848";
+    // Listener for month data
+    // $("#dropdown").on("click", function () {
+    //     console.log("disco");
+    // })
 
-    $("#dropdown").on("click", function () {
-        console.log("disco");
-    })
-
-    // Historical weather API key
-    // const weatherKey = "0f1f5e76ae2c9c4e4a7e77631190f63c";
     // Call to historical weather api
     // function tripHist(date, location) {
     //     $.ajax({
-    //         url:  `https://api.openweathermap.org/data/2.5/uvi/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}&cnt=1`,
+    //         url:  `https://api.openweathermap.org/data/2.5/uvi/forecast?lat=${lat}&lon=${lon}&appid=${histWeatherKey}&cnt=1`,
 
     //         success: function (data) {
 
@@ -34,6 +34,20 @@ $(document).ready(function () {
     //         }
     //     })
     // }
+
+    // Call to current weather api
+    function currentWeather(sL) {
+        $.ajax({
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${sL}&units=imperial&APPID=${currentWeatherKey}`,
+            success: function (data) {
+                // console.log(data);
+                weatherData = $("<p>").addClass("content").text("Current Weather: " + (data.main.temp).toFixed() + "°F");
+                console.log(data);
+
+
+            }
+        })
+    }
 
     function tripInfo(location) {
         var settings = {
@@ -56,7 +70,6 @@ $(document).ready(function () {
             }
             cardNum++
 
-            console.log(cardNum);
             var fakeNum = Math.floor(Math.random() * 30 + 50)
             let cardSetup = $("<div>").addClass("column is-one-quarter");
             let imgSetUp = $("<div>").addClass("card-image");
@@ -80,8 +93,7 @@ $(document).ready(function () {
 
             }
             let info = $("<p>").text(infotext + "...")
-            console.log(infotext);
-            card.append(cardText.append(title, info, visit, weather))
+            card.append(cardText.append(title, info, visit, weather, weatherData))
 
             // set img card
             imgSetUp.append(imgSetup2.append(imgPlace))
@@ -90,8 +102,5 @@ $(document).ready(function () {
             $(".columns").append(cardSetup)
         });
 
-        // seems like position 1 in the data array is always "geo", we'll be able to pull location name and Lat & Lon info
-
-        // for loop needed to go through array and stop at first result_type "
     }
 })
