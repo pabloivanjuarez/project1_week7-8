@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     // empty variable, filled with card count -P
     let cardNum = [0];
     // API Keys
@@ -9,14 +10,14 @@ $(document).ready(function () {
     var weatherData;
 
     // listener for input field -P
+
     $("#search-button").on("click", function () {
 
         var searchLocation = $("#search").val().trim();
         tripInfo(searchLocation)
         currentWeather(searchLocation)
 
-        //Lines 21 through(*23) 39 are for historical weather purposes. This code has been left commented out until futher funding for API use -P
-
+        //Lines 22 through(*24) 40 are for historical weather purposes. This code has been left commented out until futher funding for API use -P
         // listener for history input
         // var histDate = $("#search2").val().trim();
         // tripHist(histDate, searchLocation) 
@@ -45,6 +46,7 @@ $(document).ready(function () {
             success: function (data) {
                 // value, class, and element is given to global variable 
                 weatherData = $("<p>").addClass("content").text("Current Weather: " + (data.main.temp).toFixed() + "°F");
+
             }
         })
     }
@@ -68,6 +70,7 @@ $(document).ready(function () {
                 $(".columns").remove().last()
             }
             cardNum++
+
             // number generator for "fake" tempeture -P
             var fakeNum = Math.floor(Math.random() * 30 + 50)
             // variables filled with elements, classes, data -P
